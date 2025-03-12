@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bích Ngọc & Thành Ngọc - Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-image: url('res/img/avatar/background.JPG');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="names">Bích Ngọc & Thành Ngọc</h1>
+                <p class="wedding-date">22.03.2025</p>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <p>Ngày</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <p>Giờ</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <p>Phút</p>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <p>Giây</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Invitation Section -->
+        <section class="invitation">
+            <div class="invitation-content">
+                <h1 class="invitation-title">Thư Mời</h1>
+                <p class="invitation-quote">"Hòa nhịp là duyên và đẹp,<br>Yêu người vào ấy, cưới người thương..."</p>
+                <h2 class="invitation-text">Tham Dự Lễ Cưới Của</h2>
+                <div class="couple-info">
+                    <div class="info-frame">
+                        <div class="couple-photos">
+                            <div class="couple-side bride-side">
+                                <div class="photo-frame bride-photo">
+                                    <img src="res/img/avatar/Portrait7.JPG" alt="Cô dâu">
+                                </div>
+                                <div class="name-title">
+                                    <span>Cô dâu</span>
+                                    <h2>Bích Ngọc</h2>
+                                </div>
+                            </div>
+
+                            <div class="heart-divider">
+                                <i class="fas fa-heart"></i>
+                            </div>
+
+                            <div class="couple-side groom-side">
+                                <div class="photo-frame groom-photo">
+                                    <img src="res/img/avatar/ML_04268.JPG" alt="Chú rể">
+                                </div>
+                                <div class="name-title">
+                                    <span>Chú rể</span>
+                                    <h2>Thành Ngọc</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="families-info">
+                            <div class="family-side bride-family">
+                                <h3>Nhà gái</h3>
+                                <div class="parents">
+                                    <p>Ông Quyền Đình Tường</p>
+                                    <p>Bà Phan Thị Hương</p>
+                                </div>
+                            </div>
+
+                            <div class="family-side groom-family">
+                                <h3>Nhà trai</h3>
+                                <div class="parents">
+                                    <p>Ông Nguyễn Xuân Sỹ</p>
+                                    <p>Bà Nguyễn Thị Mong</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <div class="ceremony-time">
+                            <div class="ceremony-info">
+                                <p class="invitation-time">11:00 | Thứ 7</p>
+                            </div>
+                        </div>
+                        <div class="date-display">
+                            <div class="month-display" data-aos="fade-right">Tháng 3</div>
+                            <div class="day-display" data-aos="zoom-in">22</div>
+                            <div class="year-display" data-aos="fade-left">2025</div>
+                        </div>
+                     
+                        <div class="calendar-weekdays">
+                            <div class="weekday">T2</div>
+                            <div class="weekday">T3</div>
+                            <div class="weekday">T4</div>
+                            <div class="weekday">T5</div>
+                            <div class="weekday">T6</div>
+                            <div class="weekday">T7</div>
+                            <div class="weekday">CN</div>
+                        </div>
+                        <div class="calendar-days">
+                            <!-- Days will be filled by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery Section -->
+        <section class="gallery">
+            <div class="section-title">
+                <h2>Album Hình Cưới</h2>
+                <div class="title-decoration">
+                    <span></span>
+                    <i class="fas fa-heart"></i>
+                    <span></span>
+                </div>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Images will be loaded via JavaScript -->
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="rsvp">
+            <div class="section-title">
+                <h2>Xác Nhận Tham Dự</h2>
+                <div class="title-decoration">
+                    <span></span>
+                    <i class="fas fa-heart"></i>
+                    <span></span>
+                </div>
+            </div>
+            <form id="rsvp-form" class="rsvp-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Họ và tên" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Bạn sẽ tham dự chứ?</option>
+                        <option value="yes">Có, tôi sẽ tham dự</option>
+                        <option value="no">Rất tiếc, tôi không thể tham dự</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="Số người đi cùng" min="0" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Lời chúc"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Gửi</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Bích Ngọc & Thành Ngọc</h3>
+            <p>22.03.2025</p>
+            <div class="footer-decoration">
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
