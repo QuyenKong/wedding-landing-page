@@ -2,7 +2,9 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Bích Ngọc & Thành Ngọc - Wedding Invitation</title>
     <!-- Preload audio file -->
     <link rel="preload" href="res/audio/EmDongYIDo-DucPhucx911-9034315.mp3" as="audio" type="audio/mp3">
@@ -62,7 +64,6 @@
         <section class="invitation">
             <div class="invitation-content">
                 <h1 class="invitation-title">Thư Mời</h1>
-                <p class="invitation-quote">"Hòa nhịp là duyên và đẹp,<br>Yêu người vào ấy, cưới người thương..."</p>
                 <h2 class="invitation-text">Tham Dự Lễ Cưới Của</h2>
                 <div class="couple-info">
                     <div class="info-frame">
@@ -92,23 +93,7 @@
                             </div>
                         </div>
 
-                        <div class="families-info">
-                            <div class="family-side bride-family">
-                                <h3>Nhà gái</h3>
-                                <div class="parents">
-                                    <p>Ông Quyền Đình Tường</p>
-                                    <p>Bà Phan Thị Hương</p>
-                                </div>
-                            </div>
-
-                            <div class="family-side groom-family">
-                                <h3>Nhà trai</h3>
-                                <div class="parents">
-                                    <p>Ông Nguyễn Xuân Sỹ</p>
-                                    <p>Bà Nguyễn Thị Mong</p>
-                                </div>
-                            </div>
-                        </div>
+               
                     </div>
                 </div>
                 <div class="calendar-container">
@@ -161,23 +146,28 @@
                 <h2>Xác Nhận Tham Dự</h2>
                 <form id="rsvp-form" class="rsvp-form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="Họ và tên">
+                        <label for="name">Họ và tên</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" name="phone" required placeholder="Số điện thoại">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
+                        <label for="attending">Bạn sẽ tham dự chứ?</label>
                         <select id="attending" name="attending" required>
-                            <option value="">Bạn sẽ tham dự chứ?</option>
+                            <option value="">Vui lòng chọn</option>
                             <option value="yes">Có, tôi sẽ tham dự</option>
                             <option value="no">Rất tiếc, tôi không thể tham dự</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="number" id="guests" name="guests" min="1" max="5" required placeholder="Số người đi cùng">
+                        <label for="guests">Số người đi cùng</label>
+                        <input type="number" id="guests" name="guests" min="1" max="5" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Lời nhắn gửi đến đôi uyên ương"></textarea>
+                        <label for="message">Lời nhắn gửi đến đôi uyên ương</label>
+                        <textarea id="message" name="message"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Gửi</button>
                 </form>

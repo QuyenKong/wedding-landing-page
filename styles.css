@@ -5,6 +5,7 @@
     --accent-color: #8b6b4d;
     --white: #ffffff;
     --black: #000000;
+    --vh: 1vh;
 }
 
 * {
@@ -30,7 +31,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     position: relative;
     background: url('res/hero-bg.jpg') center/cover no-repeat;
     display: flex;
@@ -38,6 +39,7 @@ body {
     justify-content: center;
     text-align: center;
     color: var(--white);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 .hero-overlay {
@@ -53,6 +55,10 @@ body {
     position: relative;
     z-index: 1;
     padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .names {
@@ -60,28 +66,35 @@ body {
     font-size: 4.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    width: fit-content;
 }
 
 .wedding-date {
     font-size: 1.8rem;
     margin-bottom: 2.5rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    width: fit-content;
 }
 
 /* Countdown */
 .countdown {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .countdown-item {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
-    padding: 1.5rem;
+    padding: 0.8rem;
     border-radius: 15px;
-    min-width: 120px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 85px;
 }
 
 .countdown-item span {
@@ -89,12 +102,54 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    line-height: 1;
 }
 
 .countdown-item p {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .countdown {
+        gap: 0.5rem;
+    }
+
+    .countdown-item {
+        width: 70px;
+        padding: 0.6rem 0.3rem;
+    }
+
+    .countdown-item span {
+        font-size: 1.8rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .countdown-item p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        gap: 0.3rem;
+    }
+
+    .countdown-item {
+        width: 60px;
+        padding: 0.4rem 0.2rem;
+    }
+
+    .countdown-item span {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .countdown-item p {
+        font-size: 0.65rem;
+    }
 }
 
 /* Section Styles */
@@ -1149,6 +1204,15 @@ section {
     margin-bottom: 20px;
 }
 
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    letter-spacing: 0.5px;
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -1156,7 +1220,8 @@ section {
     padding: 12px 15px;
     border: 2px solid rgba(139, 107, 77, 0.2);
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
     background: white;
     transition: all 0.3s ease;
@@ -1168,6 +1233,15 @@ section {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px rgba(139, 107, 77, 0.1);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
 }
 
 .form-group textarea {
@@ -1182,15 +1256,47 @@ section {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
     cursor: pointer;
     transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-.submit-btn:hover {
-    background: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+    .form-group label {
+        font-size: 1.3rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+
+    .submit-btn {
+        font-size: 1.4rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group label {
+        font-size: 1.2rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+    .submit-btn {
+        font-size: 1.3rem;
+        padding: 10px;
+    }
 }
 
 .form-message {
@@ -1535,9 +1641,15 @@ footer {
         font-size: 1.3rem;
     }
 
+    .countdown {
+        gap: 0.5rem;
+        justify-content: center;
+        padding: 0 0.5rem;
+    }
+
     .countdown-item {
-        min-width: 80px;
-        padding: 0.8rem;
+        min-width: 70px;
+        padding: 0.8rem 0.5rem;
     }
 
     .countdown-item span {
@@ -1545,7 +1657,7 @@ footer {
     }
 
     .countdown-item p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .invitation-title {
@@ -1649,5 +1761,42 @@ footer {
 
     .families-info {
         flex-direction: row;
+    }
+
+    .hero-content {
+        padding: 1rem;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    .names {
+        font-size: 2.2rem;
+        white-space: nowrap;
+        margin-bottom: 0.5rem;
+    }
+
+    .wedding-date {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        white-space: nowrap;
+    }
+
+    .countdown {
+        gap: 0.5rem;
+        justify-content: center;
+        padding: 0 0.5rem;
+    }
+
+    .countdown-item {
+        min-width: 70px;
+        padding: 0.8rem 0.5rem;
+    }
+
+    .countdown-item span {
+        font-size: 1.5rem;
+    }
+
+    .countdown-item p {
+        font-size: 0.7rem;
     }
 }
