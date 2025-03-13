@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bích Ngọc & Thành Ngọc - Wedding Invitation</title>
+    <!-- Preload audio file -->
+    <link rel="preload" href="res/audio/EmDongYIDo-DucPhucx911-9034315.mp3" as="audio" type="audio/mp3">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -18,6 +20,15 @@
 </head>
 <body>
     <div class="main-container">
+        <!-- Music Player -->
+        <div class="music-player">
+            <button id="music-toggle" class="music-toggle">
+                <i class="fas fa-music"></i>
+            </button>
+            <audio id="background-music" loop preload="auto" playsinline>
+                <source src="res/audio/EmDongYIDo-DucPhucx911-9034315.mp3" type="audio/mpeg">
+            </audio>
+        </div>
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-overlay"></div>
@@ -82,7 +93,7 @@
                         </div>
 
                         <div class="families-info">
-                            <div >
+                            <div class="family-side bride-family">
                                 <h3>Nhà gái</h3>
                                 <div class="parents">
                                     <p>Ông Quyền Đình Tường</p>
@@ -145,37 +156,33 @@
         </section>
 
         <!-- RSVP Section -->
-        <section class="rsvp">
-            <div class="section-title">
+        <section id="rsvp" class="rsvp-section">
+            <div class="container">
                 <h2>Xác Nhận Tham Dự</h2>
-                <div class="title-decoration">
-                    <span></span>
-                    <i class="fas fa-heart"></i>
-                    <span></span>
-                </div>
+                <form id="rsvp-form" class="rsvp-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="Họ và tên">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required placeholder="Số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <select id="attending" name="attending" required>
+                            <option value="">Bạn sẽ tham dự chứ?</option>
+                            <option value="yes">Có, tôi sẽ tham dự</option>
+                            <option value="no">Rất tiếc, tôi không thể tham dự</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="guests" name="guests" min="1" max="5" required placeholder="Số người đi cùng">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Lời nhắn gửi đến đôi uyên ương"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Gửi</button>
+                </form>
+                <div id="form-message" class="form-message"></div>
             </div>
-            <form id="rsvp-form" class="rsvp-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Họ và tên" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Số điện thoại" required>
-                </div>
-                <div class="form-group">
-                    <select required>
-                        <option value="">Bạn sẽ tham dự chứ?</option>
-                        <option value="yes">Có, tôi sẽ tham dự</option>
-                        <option value="no">Rất tiếc, tôi không thể tham dự</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="number" placeholder="Số người đi cùng" min="0" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Lời chúc"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Gửi</button>
-            </form>
         </section>
     </div>
 
