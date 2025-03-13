@@ -189,21 +189,25 @@ body {
 
 @media (max-width: 480px) {
     .countdown {
-        gap: 0.3rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        transform: scale(0.8); /* Scale toàn bộ countdown khi màn hình nhỏ */
     }
 
     .countdown-item {
-        width: 60px;
-        padding: 0.4rem 0.2rem;
+        width: clamp(50px, 18vw, 70px); /* Điều chỉnh kích thước tự động theo màn hình */
+        padding: 0.6rem 0.3rem;
+        flex-shrink: 1; /* Cho phép các item co lại để vừa với màn hình */
     }
 
     .countdown-item span {
-        font-size: 1.4rem;
+        font-size: clamp(1.2rem, 5vw, 2rem); /* Scale font-size theo viewport */
         margin-bottom: 0.2rem;
     }
 
     .countdown-item p {
-        font-size: 0.65rem;
+        font-size: clamp(0.6rem, 3vw, 0.8rem);
     }
 }
 
