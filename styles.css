@@ -466,9 +466,10 @@ section {
 .couple-photos {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 4rem;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .couple-side {
@@ -476,22 +477,22 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    max-width: 400px;
+    gap: 1rem;
+    max-width: 350px;
 }
 
 .info-frame {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(var(--primary-rgb), 0.15);
     border-radius: 20px;
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .photo-frame {
@@ -548,12 +549,12 @@ section {
 
 .families-info {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-top: 1px solid rgba(var(--primary-rgb), 0.15);
-    gap: 6rem;
+    gap: 4rem;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
 }
@@ -584,26 +585,25 @@ section {
     font-family: 'Dancing Script', cursive;
     font-size: 2.2rem;
     color: var(--accent-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .parents {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.5rem;
     justify-content: center;
-    padding: 1.5rem;
-    margin-top: 1rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
     position: relative;
 }
 
 .parents p {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-color);
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.5;
     white-space: nowrap;
 }
 
@@ -803,7 +803,6 @@ section {
 .day-display.aos-animate {
     opacity: 1;
     transform: translateX(0) scale(1);
-}
 }
 
 .calendar-weekdays {
@@ -1250,25 +1249,74 @@ footer {
         font-size: 0.9rem;
     }
 
-    .couple-container {
+    .invitation-title {
+        font-size: 3.5rem;
+    }
+
+    .invitation-quote {
+        font-size: 1.2rem;
+        padding: 0 1.5rem;
+    }
+
+    .invitation-text {
+        font-size: 2.5rem;
+    }
+
+    .couple-info {
+        padding: 2rem 1rem;
+    }
+
+    .info-frame {
+        padding: 2rem 1rem;
+    }
+
+    .couple-photos {
         flex-direction: column;
-        gap: 3rem;
-        padding: 0 1rem;
+        gap: 2rem;
     }
 
-    .person-image {
-        width: 180px;
-        height: 180px;
-        object-position: center 30%;
+    .couple-side {
+        max-width: 100%;
     }
 
-    .person h3 {
-        font-size: 2rem;
+    .photo-frame {
+        max-width: 280px;
+    }
+
+    .name-title h2 {
+        font-size: 3rem;
     }
 
     .heart-divider {
         transform: rotate(90deg);
         margin: 1rem 0;
+    }
+
+    .families-info {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .family-side {
+        max-width: 100%;
+    }
+
+    .family-side::after {
+        display: none;
+    }
+
+    .family-side h3 {
+        font-size: 2rem;
+    }
+
+    .parents {
+        padding: 0.5rem;
+    }
+
+    .parents p {
+        font-size: 1rem;
+        white-space: normal;
     }
 
     .events-container {
@@ -1320,9 +1368,12 @@ footer {
     }
 
     .ceremony-time {
-        font-size: 1rem;
         padding: 0.8rem;
         margin-top: 1rem;
+    }
+
+    .ceremony-time .invitation-time {
+        font-size: 1.5rem;
     }
 
     section {
@@ -1331,10 +1382,6 @@ footer {
 
     .section-title h2 {
         font-size: 2.5rem;
-    }
-
-    .hero {
-        background-attachment: scroll;
     }
 }
 
@@ -1360,13 +1407,45 @@ footer {
         font-size: 0.8rem;
     }
 
-    .person-image {
-        width: 150px;
-        height: 150px;
+    .invitation-title {
+        font-size: 3rem;
     }
 
-    .person h3 {
+    .invitation-quote {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .invitation-text {
+        font-size: 2.2rem;
+    }
+
+    .couple-info {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .info-frame {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .photo-frame {
+        max-width: 240px;
+    }
+
+    .name-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .families-info {
+        padding: 1rem;
+    }
+
+    .family-side h3 {
         font-size: 1.8rem;
+    }
+
+    .parents p {
+        font-size: 0.95rem;
     }
 
     .calendar {
@@ -1392,23 +1471,42 @@ footer {
     }
 
     .ceremony-time {
-        font-size: 0.9rem;
         padding: 0.6rem;
+    }
+
+    .ceremony-time .invitation-time {
+        font-size: 1.3rem;
     }
 
     .section-title h2 {
         font-size: 2.2rem;
     }
+}
 
-    .footer-content h3 {
-        font-size: 2rem;
+/* Fix for landscape mode on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
     }
 
-    .footer-decoration {
-        font-size: 1.2rem;
+    .countdown {
+        margin: 1rem 0;
     }
 
-    .hero-content {
-        padding: 1rem;
+    .couple-photos {
+        flex-direction: row;
+    }
+
+    .heart-divider {
+        transform: none;
+    }
+
+    .photo-frame {
+        max-width: 200px;
+    }
+
+    .families-info {
+        flex-direction: row;
     }
 }
