@@ -61,6 +61,41 @@ body {
     align-items: center;
 }
 
+.heart-divider {
+    text-align: center;
+    margin: -4.5rem auto 2rem;
+    flex: 0 0 auto;
+}
+
+.heart-divider i {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .heart-divider {
+        margin: -4rem auto 1.5rem;
+    }
+
+    .heart-divider i {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heart-divider {
+        margin: -3.5rem auto 1rem;
+        transform: none !important;
+    }
+
+    .heart-divider i {
+        font-size: 2rem;
+        transform: none !important;
+    }
+}
+
 .names {
     font-family: 'Dancing Script', cursive;
     font-size: 4.5rem;
@@ -255,15 +290,6 @@ section {
 
 .person-social a:hover {
     color: var(--primary-color);
-}
-
-.heart-divider {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(0deg) !important;
 }
 
 /* Story Section */
@@ -1697,6 +1723,10 @@ footer {
         font-size: 1.8rem;
     }
 
+    .parents {
+        padding: 0.5rem;
+    }
+
     .parents p {
         font-size: 0.95rem;
     }
@@ -1798,5 +1828,152 @@ footer {
 
     .countdown-item p {
         font-size: 0.7rem;
+    }
+}
+
+/* Venue Section */
+.venue-section {
+    background-color: var(--white);
+    padding: 4rem 2rem;
+}
+
+.venue-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.venue-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.venue-details {
+    padding: 2.5rem;
+    background: var(--secondary-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.venue-details h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+}
+
+.venue-details p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.venue-details i {
+    color: var(--accent-color);
+    margin-right: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.venue-actions {
+    margin: 0 0 2rem;
+}
+
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: var(--accent-color);
+    color: var(--white);
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(139, 107, 77, 0.2);
+}
+
+.directions-btn i {
+    color: var(--white);
+    margin-right: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.directions-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 107, 77, 0.3);
+}
+
+.venue-map {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.venue-map iframe {
+    display: block;
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .venue-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .venue-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .venue-details {
+        padding: 2rem;
+    }
+
+    .venue-details h3 {
+        font-size: 2.2rem;
+    }
+
+    .venue-details p {
+        font-size: 1.1rem;
+    }
+
+    .directions-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .venue-map iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .venue-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .venue-section h2 {
+        font-size: 2.2rem;
+    }
+
+    .venue-details {
+        padding: 1.5rem;
+    }
+
+    .venue-details h3 {
+        font-size: 1.8rem;
+    }
+
+    .venue-map iframe {
+        height: 250px;
+    }
+
+    .directions-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
     }
 }
