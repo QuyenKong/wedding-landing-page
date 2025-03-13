@@ -137,9 +137,10 @@ body {
 .countdown {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin: 0 auto;
-    padding: 0 1rem;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap; /* Không cho xuống hàng */
+    transform-origin: center;
 }
 
 .countdown-item {
@@ -2003,12 +2004,15 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-        background-position: center;
+    .countdown {
+        transform: scale(0.9); /* Thu nhỏ countdown */
     }
 }
-
+@media screen and (max-width: 480px) {
+    .countdown {
+        transform: scale(0.8); /* Thu nhỏ mạnh hơn */
+    }
+}
 @supports (-webkit-touch-callout: none) {
     body {
         background-attachment: scroll;
