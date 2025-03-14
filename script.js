@@ -515,3 +515,22 @@ document.addEventListener('DOMContentLoaded', () => {
         imageObserver.observe(item);
     });
 });
+
+// Thêm hàm để kiểm tra và thêm class visible
+function checkPhotoFrames() {
+    const photoFrames = document.querySelectorAll('.photo-frame');
+    
+    photoFrames.forEach(frame => {
+        const frameTop = frame.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (frameTop < windowHeight * 0.85) { // Hiển thị khi phần tử nằm trong 85% chiều cao màn hình
+            frame.classList.add('visible');
+        }
+    });
+}
+
+// Thêm event listener cho scroll
+document.addEventListener('scroll', checkPhotoFrames);
+// Kiểm tra ngay khi trang tải xong
+document.addEventListener('DOMContentLoaded', checkPhotoFrames);
