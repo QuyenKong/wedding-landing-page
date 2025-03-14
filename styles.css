@@ -137,43 +137,38 @@ body {
 .countdown {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Đảm bảo các phần tử xuống dòng khi không đủ không gian */
     gap: 1rem;
     margin: 0 auto;
     padding: 0 1rem;
-    max-width: 100%;
+    max-width: 100%; /* Giữ bố cục responsive */
 }
 
 .countdown-item {
-    background: rgba(0, 0, 0, 0.4); /* Thay đổi màu nền thành tối hơn */
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     padding: 0.8rem;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
     min-width: 70px;
-    max-width: 90px;
-    flex: 1 1 auto;
+    max-width: 90px; /* Tránh việc bị quá to trên một số màn hình */
+    flex: 1 1 auto; /* Đảm bảo điều chỉnh kích thước tự động */
 }
 
 .countdown-item span {
     display: block;
-    font-size: 2rem;
+    font-size: 2rem; /* Giảm nhẹ kích thước trên mobile */
     font-weight: 600;
     margin-bottom: 0.5rem;
     line-height: 1;
-    color: var(--white); /* Đảm bảo số luôn có màu trắng */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ cho số */
 }
 
 .countdown-item p {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Giảm font để tránh tràn màn hình */
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1;
-    color: var(--white); /* Đảm bảo chữ luôn có màu trắng */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ cho chữ */
 }
 
 @media (max-width: 768px) {
@@ -1884,7 +1879,7 @@ footer {
 }
 
 .venue-details {
-    padding: 2.5rem;
+    padding: 1rem;
     background: var(--secondary-color);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -1912,7 +1907,7 @@ footer {
 }
 
 .venue-actions {
-    margin: 0 0 2rem;
+    padding: 2rem 0;
 }
 
 .directions-btn {
