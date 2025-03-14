@@ -1632,18 +1632,24 @@ footer {
     }
 
     .date-display {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: baseline;
+        padding: 0.8rem;
+        white-space: nowrap;
     }
 
-    .month-display,
-    .year-display {
-        font-size: 2rem;
+    .month-display {
+        font-size: 1.8rem;
     }
 
     .day-display {
-        font-size: 4rem;
+        font-size: 2.2rem;
+        padding: 0 0.5rem;
+    }
+
+    .year-display {
+        font-size: 1.8rem;
     }
 
     .calendar-weekdays {
@@ -1777,13 +1783,16 @@ footer {
         margin: 0 0.5rem;
     }
 
-    .month-display,
-    .year-display {
-        font-size: 1.8rem;
+    .month-display {
+        font-size: 1.5rem;
     }
 
     .day-display {
-        font-size: 3.5rem;
+        font-size: 1.8rem;
+    }
+
+    .year-display {
+        font-size: 1.5rem;
     }
 
     .calendar-weekdays {
