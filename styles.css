@@ -145,8 +145,9 @@ body {
 }
 
 .countdown-item {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.7); /* Thay đổi màu nền thành tối hơn */
+    backdrop-filter: blur(5px); /* Thêm backdrop-filter */
+    -webkit-backdrop-filter: blur(5px); /* Thêm -webkit-backdrop-filter */
     padding: 0.8rem;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -162,6 +163,8 @@ body {
     font-weight: 600;
     margin-bottom: 0.5rem;
     line-height: 1;
+    color: var(--white); /* Đảm bảo số và chữ luôn có màu trắng */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Thêm text-shadow */
 }
 
 .countdown-item p {
@@ -169,6 +172,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1;
+    color: var(--white); /* Đảm bảo số và chữ luôn có màu trắng */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Thêm text-shadow */
 }
 
 @media (max-width: 768px) {

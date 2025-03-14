@@ -99,28 +99,37 @@ const galleryImages = [...row1Images, ...row2Images, ...row3Images];
 const galleryGrid = document.getElementById('gallery-grid');
 
 // Create and configure Intersection Observer
-const observerOptions = {
-    root: null,
-    rootMargin: '50px',
-    threshold: 0.1
-};
-
 const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
             const item = entry.target;
             const img = item.querySelector('img');
             
+            // Tối ưu loading ảnh
             if (img.dataset.src) {
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
+                // Preload ảnh trước khi hiển thị
+                const tempImg = new Image();
+                tempImg.src = img.dataset.src;
+                tempImg.onload = () => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    
+                    // Thêm class visible sau khi ảnh đã load
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 100); // Giảm delay xuống để animation mượt hơn
+                };
+            } else {
+                item.classList.add('visible');
             }
             
-            item.classList.add('visible');
             observer.unobserve(item);
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1, // Giảm threshold để load sớm hơn
+    rootMargin: '50px'
+});
 
 // Create and add gallery items with lazy loading
 galleryImages.forEach((imagePath, index) => {
@@ -477,3 +486,32 @@ setVH();
 // Update on resize and orientation change
 window.addEventListener('resize', setVH);
 window.addEventListener('orientationchange', setVH);
+
+// Tối ưu scroll performance
+let ticking = false;
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach((item) => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const scrolled = window.pageYOffset;
+                    const speed = 0.02; // Giảm tốc độ parallax
+                    const yPos = -(scrolled * speed);
+                    item.style.transform = `translateY(${yPos}px)`;
+                }
+            });
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
+// Thêm lazy loading cho gallery
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach((item) => {
+        imageObserver.observe(item);
+    });
+});
