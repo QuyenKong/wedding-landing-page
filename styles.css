@@ -1180,7 +1180,7 @@ section {
     }
 
     .gallery-item.landscape {
-        aspect-ratio: 3/2;
+        aspect-ratio: 4/3;
     }
 }
 
@@ -1198,9 +1198,12 @@ section {
         gap: 0.8rem;
     }
 
-    .gallery-item,
+    .gallery-item {
+        aspect-ratio: 3/4;
+    }
+
     .gallery-item.landscape {
-        aspect-ratio: 1/1;
+        aspect-ratio: 5/4;
     }
 }
 
